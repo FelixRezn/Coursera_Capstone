@@ -110,6 +110,8 @@ for city in cityList:
     The geograpical coordinate of Phoenix, AZ are 33.4484367, -112.0741417.
     
 
+First, we need to figure out the coffee shops category Id in order to proceed with fetching the coffee shops data using Foursquare API
+
 
 ```python
 search_query = 'Coffee'
@@ -126,8 +128,6 @@ LIMIT = 1 # we will use this single query result to fetch the category Id
 #print('CLIENT_SECRET:' + CLIENT_SECRET)
 ```
 
-First, we need to figure out the coffee shops category Id in order to proceed with fetching the coffee shops data using Foursquare API
-
 
 ```python
 neighborhood_latitude = cityCoordinates['New York, NY'][0]
@@ -142,11 +142,11 @@ url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}
 queryResult = requests.get(url).json()
 
 # fetching category name and id
-#print(queryResult['response']['venues'][0]['categories'][0]['name'] + ", " + queryResult['response']['venues'][0]['categories'][0]['id']) #'4bf58dd8d48988d1e0931735'
-print(queryResult['response']['venues'][0]) #'4bf58dd8d48988d1e0931735'
+#print(queryResult['response']['venues'][0]) #'4bf58dd8d48988d1e0931735'
+print(queryResult['response']['venues'][0]['categories'][0]['name'] + ", " + queryResult['response']['venues'][0]['categories'][0]['id']) #'4bf58dd8d48988d1e0931735'
 ```
 
-    {'id': '49c79540f964a520af571fe3', 'name': 'Blue Spoon Coffee Co.', 'location': {'address': '76 Chambers St', 'crossStreet': 'at Broadway', 'lat': 40.714427584609766, 'lng': -74.00685853301651, 'labeledLatLngs': [{'label': 'display', 'lat': 40.714427584609766, 'lng': -74.00685853301651}], 'distance': 202, 'postalCode': '10007', 'cc': 'US', 'city': 'New York', 'state': 'NY', 'country': 'United States', 'formattedAddress': ['76 Chambers St (at Broadway)', 'New York, NY 10007']}, 'categories': [{'id': '4bf58dd8d48988d1e0931735', 'name': 'Coffee Shop', 'pluralName': 'Coffee Shops', 'shortName': 'Coffee Shop', 'icon': {'prefix': 'https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_', 'suffix': '.png'}, 'primary': True}], 'referralId': 'v-1608571888', 'hasPerk': False}
+    Coffee Shop, 4bf58dd8d48988d1e0931735
     
 
 Now we can proceed with pulling the data
