@@ -164,6 +164,19 @@ It is very useful for visualizing the findings on the map thus it was used for d
 
 # Results
 
+Please see the results below:
+
+1. The best city:
+![image](./best_city_results_table.jpg)
+
+2. Best borough:
+![image](./best_borough_results_table.jpg)
+
+3. Top five neighborhoods are:
+![image](./best_neighborhoods_results_table.jpg)
+
+# Discussion
+
 Based on the analysis results, we were able to find the best location for a new business. The most attractive area for the new coffee beans roasting facility is Manhattan, and it’s five neighborhoods. Please see the details below:
 
 1. The best city:
